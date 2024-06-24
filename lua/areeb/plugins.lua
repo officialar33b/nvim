@@ -81,6 +81,14 @@ return packer.startup(function(use)
   use "sbdchd/neoformat"
   use({"ckipp01/stylua-nvim"})
 
+  -- autocomplete. 
+  use {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = function()
+        require("nvim-autopairs").setup {}
+    end
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
